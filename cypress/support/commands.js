@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+require('cypress-xpath');
+import 'cypress-file-upload';
+
+
+Cypress.Commands.add('login',(email, password)=>{
+    cy.visit(Cypress.env('baseURL'))
+    cy.xpath('//input[@name="userName"]').type(email);
+    cy.xpath('//button[@aria-label="Next"]').click();
+    cy.xpath('//input[@type="password"]').type(password);
+    cy.xpath('//button[@aria-label="Log in"]').click();
+})

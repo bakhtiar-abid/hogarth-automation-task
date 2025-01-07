@@ -1,0 +1,19 @@
+const { loginPage } = require("../../pages/LoginPage");
+require('dotenv').config();
+
+const loginPageObj = new loginPage();
+
+const userEmail = Cypress.env('USEREMAIL');
+const password = Cypress.env('PASSWORD');
+describe('Login to the admin panel', () => {
+
+    beforeEach(() => {
+        loginPageObj.visitWebPage();
+    });
+  
+
+    it('Verify that admin successfully can login the admin panel', () => {
+        loginPageObj.enterEmail("sash.dqa@gmail.com");
+        loginPageObj.enterPassword('Abid1234');
+    });
+});
