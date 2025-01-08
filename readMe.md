@@ -60,6 +60,19 @@ This project is integrated with CI/CD pipelines with GitHub Actions to automate 
 ## Reporting
 The project generates test reports using [Mocha Reporter]. The reports are saved in the `reports/` directory.
 
+
+https://github.com/user-attachments/assets/ac5ad3bf-be97-467a-93fe-b8abfed44557
+
+
+
+https://github.com/user-attachments/assets/8a9c8324-a994-4fe1-a111-a6ab2c86e2d6
+
+
+
+https://github.com/user-attachments/assets/8b82aa6b-e67b-4bf7-80e8-1deb8cb8ad01
+
+
+
 ## Browser Configuration
 
 ### For now, This project has configured with one browser, we can easily create more browser later on.
