@@ -11,6 +11,8 @@ export class imageUpload{
         imageTypeInputBox: '(//input[@class="mb-tag-field__input"])[3]',
         imageTitile: '//p[@class="chakra-text css-ytdmmk"]',
         saveButton: '//button[@aria-label="Confirm"]',
+        listContainer: '//div[@class="chakra-stack css-1ocxmib"]',
+        thumbanailContainer: '.chakra-stack.css-7w28qn'
 
     }
 
@@ -38,8 +40,16 @@ export class imageUpload{
     fillInformation(title, image){
      cy.xpath(this.imageUplaodWebLocators.titleField).type(title)
      cy.xpath(this.imageUplaodWebLocators.imageTypeField).click({force:true});
-     cy.xpath(this.imageUplaodWebLocators.imageTypeInputBox).type("Image").type('{enter}');
+     cy.xpath(this.imageUplaodWebLocators.imageTypeInputBox).type(image).type('{enter}');
      cy.xpath(this.imageUplaodWebLocators.saveButton).click();
+    }
+
+    verifyUploadedImageFileName(){
+        return cy.xpath(this.imageUplaodWebLocators.listContainer);
+    }
+
+    verifyUploadedImageThumbnail(){
+        return cy.get(this.imageUplaodWebLocators.thumbanailContainer);
     }
  
 }
