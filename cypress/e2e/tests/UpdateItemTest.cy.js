@@ -1,15 +1,14 @@
-
-const { imageUpload } = require("../../pages/ImageUpload");
 const { UpdateItemPage } = require("../../pages/UpdateItemPage");
 import typeInfo from '../../fixtures/data.json';
+import { ImageUploadPage } from '../../pages/ImageUploadPage';
 require('dotenv').config();
 
 const updateItemPageObj = new UpdateItemPage();
-const imageUploadObj = new imageUpload();
+const imageUploadObj = new ImageUploadPage();
 
-describe('Update Item', () => {
+describe('Update Item @Part-2', () => {
 
-    beforeEach(() => {
+    beforeEach(() => { 
         cy.login("sash.dqa@gmail.com", "Abid1234");
     })
   

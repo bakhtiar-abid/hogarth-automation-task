@@ -1,11 +1,12 @@
-const { imageUpload } = require("../../pages/ImageUpload");
+
 const { loginPage } = require("../../pages/LoginPage");
 import typeInfo from "../../fixtures/data.json";
+import { ImageUploadPage } from "../../pages/ImageUploadPage";
 
 require("dotenv").config();
 
-const imageUploadObj = new imageUpload();
-describe("Upload Item To The Admin Panel", () => {
+const imageUploadObj = new ImageUploadPage();
+describe("Upload Item To The Admin Panel @Part-1", () => {
   beforeEach(() => {
     cy.login("sash.dqa@gmail.com", "Abid1234");
   });
