@@ -1,11 +1,11 @@
 const { imageUpload } = require("../../pages/ImageUpload");
 const { loginPage } = require("../../pages/LoginPage");
-import typeInfo from '../../fixtures/data.json'; // Adjust path as needed
+import typeInfo from '../../fixtures/data.json';
 
 require('dotenv').config();
 
 const imageUploadObj = new imageUpload();
-describe('Login to the admin panel', () => {
+describe('Upload Item To The Admin Panel', () => {
 
     beforeEach(() => {
         cy.login("sash.dqa@gmail.com", "Abid1234");
@@ -18,7 +18,6 @@ describe('Login to the admin panel', () => {
         imageUploadObj.checkUploadedImage().should('have.text', typeInfo.imageName);
         imageUploadObj.fillInformation(typeInfo.title, typeInfo.type);
         cy.wait(10000);
-       
     });
 
 
@@ -45,7 +44,7 @@ describe('Login to the admin panel', () => {
     cy.contains('p.chakra-text', typeInfo.title)
   .should('be.visible')
   .and('have.text', typeInfo.title);
-// verification of image type checking 
+   // verification of image type checking 
   cy.contains('p.chakra-text',  typeInfo.type)
   .should('be.visible')
   .and('have.text',  typeInfo.type);

@@ -12,7 +12,7 @@ export class imageUpload{
         imageTitile: '//p[@class="chakra-text css-ytdmmk"]',
         saveButton: '//button[@aria-label="Confirm"]',
         listContainer: '//div[@class="chakra-stack css-1ocxmib"]',
-        thumbanailContainer: '.chakra-stack.css-7w28qn'
+        thumbanailContainer: '.chakra-stack.css-7w28qn',
 
     }
 
@@ -51,5 +51,7 @@ export class imageUpload{
     verifyUploadedImageThumbnail(){
         return cy.get(this.imageUplaodWebLocators.thumbanailContainer);
     }
+
+    
  
 }
