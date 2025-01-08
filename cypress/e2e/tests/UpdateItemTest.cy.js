@@ -9,18 +9,21 @@ const imageUploadObj = new ImageUploadPage();
 describe('Update Item @Part-2', () => {
 
     beforeEach(() => { 
-        cy.login("sash.dqa@gmail.com", "Abid1234");
+        cy.login(Cypress.env('userEmail'), Cypress.env('password'));
     })
   
 
     it('Verify that item is selected and edit for the information for title name value', () => {
         imageUploadObj.selectDamPopUp();
+        cy.wait(3000);
         updateItemPageObj.clickCheckBoxToSelectItem();
+        cy.wait(3000);
         updateItemPageObj.editItemClickForUpdateInformation(typeInfo.updateTitle);
     });
 
     it('Verify that after updating the item it is displaying the title as expected', () => {
         imageUploadObj.selectDamPopUp();
+        cy.wait(3000);
     //verification of title checking
     cy.contains("p.chakra-text", typeInfo.updateTitle)
       .should("be.visible")

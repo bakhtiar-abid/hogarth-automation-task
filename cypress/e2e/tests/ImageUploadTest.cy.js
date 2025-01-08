@@ -8,12 +8,13 @@ require("dotenv").config();
 const imageUploadObj = new ImageUploadPage();
 describe("Upload Item To The Admin Panel @Part-1", () => {
   beforeEach(() => {
-    cy.login("sash.dqa@gmail.com", "Abid1234");
+    cy.login(Cypress.env('userEmail'), Cypress.env('password'));
   });
 
   it("Verify that After logged in, go to DAM > Assets from the top menu and upload image with info", () => {
     imageUploadObj.selectDamPopUp();
     imageUploadObj.selectItemUploadButton();
+    cy.wait(3000);
     imageUploadObj.checkUploadedImage().should("have.text", typeInfo.imageName);
     imageUploadObj.fillInformation(typeInfo.title, typeInfo.type);
     cy.wait(10000);
@@ -22,6 +23,7 @@ describe("Upload Item To The Admin Panel @Part-1", () => {
   it("Verify that photo has been uploaded successfully according to the file name", () => {
     const imageName = "Photography.jpeg";
     imageUploadObj.selectDamPopUp();
+    cy.wait(3000);
     imageUploadObj
       .verifyUploadedImageFileName()
       .contains(imageName)
@@ -30,6 +32,7 @@ describe("Upload Item To The Admin Panel @Part-1", () => {
 
   it("Verify that photo has been uploaded successfully based on the generated the thumbnail of the uploaded image", () => {
     imageUploadObj.selectDamPopUp();
+    cy.wait(3000);
     imageUploadObj
       .verifyUploadedImageThumbnail()
       .find("img.chakra-image.css-ltsvov")
@@ -44,10 +47,12 @@ describe("Upload Item To The Admin Panel @Part-1", () => {
 
   it("Verify that the title and type is displayed as expected", () => {
     imageUploadObj.selectDamPopUp();
+    cy.wait(3000);
     //verification of title checking
     cy.contains("p.chakra-text", typeInfo.title)
       .should("be.visible")
       .and("have.text", typeInfo.title);
+      cy.wait(3000);
     // verification of image type checking
     cy.contains("p.chakra-text", typeInfo.type)
       .should("be.visible")

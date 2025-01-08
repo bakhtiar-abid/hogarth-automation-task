@@ -13,7 +13,7 @@ describe('Login to the admin panel', () => {
   
 
     it('Verify that admin successfully can login the admin panel', () => {
-        loginPageObj.enterEmail("sash.dqa@gmail.com");
-        loginPageObj.enterPassword('Abid1234');
+        loginPageObj.enterEmail(Cypress.env('userEmail'));
+        loginPageObj.enterPassword(Cypress.env('password'));
     });
 });
