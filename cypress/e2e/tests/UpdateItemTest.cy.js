@@ -7,7 +7,7 @@ require('dotenv').config();
 const updateItemPageObj = new UpdateItemPage();
 const imageUploadObj = new imageUpload();
 
-describe('Login to the admin panel', () => {
+describe('Update Item', () => {
 
     beforeEach(() => {
         cy.login("sash.dqa@gmail.com", "Abid1234");
@@ -18,5 +18,13 @@ describe('Login to the admin panel', () => {
         imageUploadObj.selectDamPopUp();
         updateItemPageObj.clickCheckBoxToSelectItem();
         updateItemPageObj.editItemClickForUpdateInformation(typeInfo.updateTitle);
+    });
+
+    it('Verify that after updating the item it is displaying the title as expected', () => {
+        imageUploadObj.selectDamPopUp();
+    //verification of title checking
+    cy.contains("p.chakra-text", typeInfo.updateTitle)
+      .should("be.visible")
+      .and("have.text", typeInfo.updateTitle);
     });
 });

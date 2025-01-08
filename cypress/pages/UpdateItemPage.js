@@ -20,10 +20,4 @@ export class UpdateItemPage{
         cy.xpath(this.updateItemPageLocators.saveButton).click();
         cy.xpath(this.updateItemPageLocators.closeItem).click();
     }
-
-    verifyTheUpdatedItemInfoTitle(){
-
-    }
-
- 
 }
