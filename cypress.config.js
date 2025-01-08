@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 const dotenv = require('cypress-dotenv');
 
 module.exports = defineConfig({
+  screenshot:true,
   video:true,
   e2e: {
     reporter: 'cypress-mochawesome-reporter',
