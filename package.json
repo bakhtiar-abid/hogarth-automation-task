@@ -1,7 +1,10 @@
 {
   "scripts": {
     "test": "npx cypress run",
+    "test:register": "npx cypress run --spec  cypress/e2e/tests/RegisterTest.cy.js",
+    "test:login": "npx cypress run --headed --spec cypress/e2e/tests/LoginTest.cy.js"
   },
+ 
   "devDependencies": {
     "cypress": "^13.17.0",
     "cypress-file-upload": "^5.0.8"
