@@ -48,10 +48,10 @@ This project is aimed at automating the testing process for the Hogarth Automati
 The project includes automated test cases for the following functionalities:
 
 
-- Login: Admin can succefully login from the browser.
-- Image Upload: validate to upload imgae with proper information such as title and type.
-- Update Item: Verify that admin can update the item and ensure it is updated accordingly.
-- Share Item: Valiate that admin can share item with email and verification of the received an email with download link..
+- Login: Ensure the Admin can successfully log in through the browser.
+- Image Upload: Validate that images can be uploaded with accurate and complete information, including title and type.
+- Update Item: Verify that the Admin can update items and confirm that the updates are reflected correctly.
+- Share Item: Validate that the Admin can share items via email and confirm that the recipient receives an email with a download link.
 
 ## CI/CD Integration
 This project is integrated with CI/CD pipelines with GitHub Actions to automate test execution on every commit.
@@ -60,16 +60,20 @@ This project is integrated with CI/CD pipelines with GitHub Actions to automate 
 ## Reporting
 The project generates test reports using [Mocha Reporter]. The reports are saved in the `reports/` directory.
 
+- Login Functionality
+https://github.com/user-attachments/assets/8b82aa6b-e67b-4bf7-80e8-1deb8cb8ad01
 
+- @Part 1 Validate that images can be uploaded with accurate and complete information, including title and type.
 https://github.com/user-attachments/assets/ac5ad3bf-be97-467a-93fe-b8abfed44557
 
 
-
+- @Part 2 Validate that images can be uploaded with accurate and complete information, including title and type.
 https://github.com/user-attachments/assets/8a9c8324-a994-4fe1-a111-a6ab2c86e2d6
 
 
+- @Part 3 Verify that the Admin can update items and confirm that the updates are reflected correctly.
+https://github.com/user-attachments/assets/0899b876-093a-4aca-b014-7a324ea7e44c
 
-https://github.com/user-attachments/assets/8b82aa6b-e67b-4bf7-80e8-1deb8cb8ad01
 
 
 
