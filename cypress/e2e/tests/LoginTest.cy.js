@@ -3,8 +3,7 @@ require('dotenv').config();
 
 const loginPageObj = new loginPage();
 
-const userEmail = Cypress.env('USEREMAIL');
-const password = Cypress.env('PASSWORD');
+
 describe('Login to the admin panel', () => {
 
     beforeEach(() => {

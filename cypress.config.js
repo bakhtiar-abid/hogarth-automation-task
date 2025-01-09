@@ -1,6 +1,4 @@
 const { defineConfig } = require("cypress");
-const dotenv = require('cypress-dotenv');
-
 module.exports = defineConfig({
   screenshot:true,
   video:true,
@@ -16,7 +14,5 @@ module.exports = defineConfig({
     baseURL: "https://qatest.marcombox.com",
     userEmail: "sash.dqa@gmail.com",
     password: "Abid1234"
-    // userEmail: process.env.USEREMAIL,
-    // password: process.env.PASSWORD
   }
 });

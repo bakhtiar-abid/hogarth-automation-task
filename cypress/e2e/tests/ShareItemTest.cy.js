@@ -4,13 +4,10 @@ import typeInfo from '../../fixtures/data.json';
 import { ImageUploadPage } from '../../pages/ImageUploadPage';
 import { ShareItemPage } from '../../pages/ShareItemPage';
 
-
-const updateItemPageObj = new UpdateItemPage();
 const imageUploadObj = new ImageUploadPage();
 const shareItemObj = new ShareItemPage();
 
-describe('Share Item @Part-3', () => {
-    const emailAddress = 'user-d10f1c57-8f3b-4aa8-806e-ee2d897ff398@mailslurp.biz';
+describe('Share Item with Email and Verification with the dowloadable link @Part-3', () => {
     let emailId;
 
     beforeEach(() => {

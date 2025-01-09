@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "npx cypress run",
-    "test:register": "npx cypress run --spec  cypress/e2e/tests/RegisterTest.cy.js",
+    "test:shareItem": "npx cypress run --spec  cypress/e2e/tests/ShareItemTest.cy.js",
     "test:login": "npx cypress run --headed --spec cypress/e2e/tests/LoginTest.cy.js"
   },
   "devDependencies": {
