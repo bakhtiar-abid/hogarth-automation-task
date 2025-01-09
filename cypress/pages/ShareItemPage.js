@@ -6,10 +6,12 @@ export class ShareItemPage{
        checkbox: '.chakra-checkbox__control',
        shareButton: '//button[@title="Share"]',
        addEmail: '//div[@class="mb-tag-field__control css-g5xere-control"]//input',
-       sendEmail: '//button[@aria-label="Email Link"]'
+       sendEmail: '//button[@aria-label="Email Link"]',
+       apiKeyField: '//input[@data-testid="api-key"]',
+       loginButton: '#login',
+       clickToLogin: '//button[@class="md"]',
+       
     }
-
-
     shareItemWithEamil(emailID){
        cy.get(this.shareItemPageLocators.checkbox).eq(2).click();
        cy.xpath(this.shareItemPageLocators.shareButton).click();
@@ -23,6 +25,14 @@ export class ShareItemPage{
 
          cy.xpath(this.shareItemPageLocators.sendEmail).click();
        });
+    }
+   
+
+
+    visitToTheEmailProviderAndVerifyDownLoad(email){
+      cy.get(this.shareItemPageLocators.loginButton).type(email);
+      cy.xpath(this.shareItemPageLocators.clickToLogin).click();
+      
     }
 
     

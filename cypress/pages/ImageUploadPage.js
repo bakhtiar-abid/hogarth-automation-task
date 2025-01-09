@@ -11,8 +11,10 @@ export class ImageUploadPage{
         imageTypeInputBox: '(//input[@class="mb-tag-field__input"])[3]',
         imageTitile: '//p[@class="chakra-text css-ytdmmk"]',
         saveButton: '//button[@aria-label="Confirm"]',
+        findImageTag: 'img.chakra-image.css-ltsvov',
         listContainer: '//div[@class="chakra-stack css-1ocxmib"]',
         thumbanailContainer: '.chakra-stack.css-7w28qn',
+        inputFile: 'input[type="file"]'
 
     }
 
@@ -25,12 +27,11 @@ export class ImageUploadPage{
        cy.get(this.imageUplaodWebLocators.assestsButton,  { timeout: 10000 }).click();
     }
 
-    selectItemUploadButton(){
+    selectItemUploadButton(filePaths){
         cy.viewport(1900, 700);
         cy.xpath(this.imageUplaodWebLocators.uploadItemButton).click();
         cy.xpath(this.imageUplaodWebLocators.fileUpload).click();
-        const filePath = 'images/Photography.jpeg'; 
-        cy.get('input[type="file"]').attachFile(filePath);
+        cy.get(this.imageUplaodWebLocators.inputFile).attachFile(filePaths);
     }
 
     checkUploadedImage(){
@@ -51,6 +52,8 @@ export class ImageUploadPage{
     verifyUploadedImageThumbnail(){
         return cy.get(this.imageUplaodWebLocators.thumbanailContainer);
     }
+
+    
 
     
  

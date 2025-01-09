@@ -1,5 +1,4 @@
 
-const { UpdateItemPage } = require("../../pages/UpdateItemPage");
 import typeInfo from '../../fixtures/data.json';
 import { ImageUploadPage } from '../../pages/ImageUploadPage';
 import { ShareItemPage } from '../../pages/ShareItemPage';
@@ -7,40 +6,29 @@ import { ShareItemPage } from '../../pages/ShareItemPage';
 const imageUploadObj = new ImageUploadPage();
 const shareItemObj = new ShareItemPage();
 
-describe('Share Item with Email and Verification with the dowloadable link @Part-3', () => {
+describe('Part-3: Share Item with Email and Verification with the dowloadable link', () => {
     let emailId;
-
-    beforeEach(() => {
-        cy.login(Cypress.env('userEmail'), Cypress.env('password'));
-    })
+   
+ 
   
 
     it('Verify that item is selected and edit for the information for title name value', () => {
+        cy.login(Cypress.env('userEmail'), Cypress.env('password'));
         imageUploadObj.selectDamPopUp();
         cy.wait(6000);
         shareItemObj.shareItemWithEamil(typeInfo.shareEmail);
+        
     });
 
     it('Verify email for download link', () => {
-        imageUploadObj.selectDamPopUp();
-        cy.wait(6000);
-        cy.mailslurp().then(mailslurp => {
-          
-          mailslurp.waitForLatestEmail('d10f1c57-8f3b-4aa8-806e-ee2d897ff398', 60000).then(email => {
-            emailId = email.id;
-    
-            
-            // expect(email.subject).to.include('Download Link');
-            expect(email.body).to.include('Click here to download the files');
-    
-            
-            const linkRegex = /(https?:\/\/[^\s]+)/g;
-            const downloadLink = email.body.match(linkRegex)[0];
-            expect(downloadLink).to.not.be.empty;
-    
-           
-            cy.visit(downloadLink);
-          });
-        });
-      });
+        cy.visit(Cypress.env('yopMail'));
+        shareItemObj.visitToTheEmailProviderAndVerifyDownLoad(typeInfo.shareEmail);
+        cy.xpath('//span[text()="Click here to download the files"]')
+        .should('exist') // Ensure the element exists
+        .and('have.text', 'Click here to download the files');
+
+        cy.get('a')
+        .should('have.attr', 'href')
+        .and('include', 'https://qatest.marcombox.com/FileShare?id=');
+    });
 });

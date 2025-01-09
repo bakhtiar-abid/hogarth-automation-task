@@ -6,18 +6,19 @@ import { ImageUploadPage } from "../../pages/ImageUploadPage";
 require("dotenv").config();
 
 const imageUploadObj = new ImageUploadPage();
-describe("Upload Item To The Admin Panel @Part-1", () => {
+describe("Part-1: Upload Item To The Admin Panel", () => {
   beforeEach(() => {
     cy.login(Cypress.env('userEmail'), Cypress.env('password'));
   });
 
-  it("Verify that After logged in, go to DAM > Assets from the top menu and upload image with info", () => {
+  it("Verify that After logged in, go to DAM > Assets from the top menu and upload image with information", () => {
+    const filePath = 'images/Photography.jpeg'; 
     imageUploadObj.selectDamPopUp();
-    imageUploadObj.selectItemUploadButton();
+    imageUploadObj.selectItemUploadButton(filePath);
     cy.wait(3000);
     imageUploadObj.checkUploadedImage().should("have.text", typeInfo.imageName);
     imageUploadObj.fillInformation(typeInfo.title, typeInfo.type);
-    cy.wait(10000);
+    cy.wait(6000);
   });
 
   it("Verify that photo has been uploaded successfully according to the file name", () => {
@@ -35,7 +36,7 @@ describe("Upload Item To The Admin Panel @Part-1", () => {
     cy.wait(3000);
     imageUploadObj
       .verifyUploadedImageThumbnail()
-      .find("img.chakra-image.css-ltsvov")
+      .find(imageUploadObj.imageUplaodWebLocators.findImageTag)
       .should("be.visible")
       .and("have.attr", "src")
       .then((src) => {

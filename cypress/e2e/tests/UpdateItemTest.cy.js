@@ -6,7 +6,7 @@ require('dotenv').config();
 const updateItemPageObj = new UpdateItemPage();
 const imageUploadObj = new ImageUploadPage();
 
-describe('Update Item @Part-2', () => {
+describe('Part-2: Update Item', () => {
 
     beforeEach(() => { 
         cy.login(Cypress.env('userEmail'), Cypress.env('password'));

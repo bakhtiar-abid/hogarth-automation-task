@@ -1,8 +1,11 @@
 {
   "scripts": {
     "test": "npx cypress run",
-    "test:shareItem": "npx cypress run --spec  cypress/e2e/tests/ShareItemTest.cy.js",
-    "test:login": "npx cypress run --headed --spec cypress/e2e/tests/LoginTest.cy.js"
+    "test:login": "npx cypress run --headed --spec cypress/e2e/tests/LoginTest.cy.js",
+    "test:uploadItem": "npx cypress run --headed --spec cypress/e2e/tests/ImageUploadTest.cy.js",
+    "test:updateItem": "npx cypress run --headed --spec cypress/e2e/tests/UpdateItemTest.cy.js",
+    "test:shareItem": "npx cypress run --spec  cypress/e2e/tests/ShareItemTest.cy.js"
+    
   },
   "devDependencies": {
     "cypress": "^13.17.0",

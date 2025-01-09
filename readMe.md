@@ -53,10 +53,6 @@ The project includes automated test cases for the following functionalities:
 - Update Item: Verify that the Admin can update items and confirm that the updates are reflected correctly.
 - Share Item: Validate that the Admin can share items via email and confirm that the recipient receives an email with a download link.
 
-## CI/CD Integration
-This project is integrated with CI/CD pipelines with GitHub Actions to automate test execution on every commit.
-
-
 ## Reporting
 The project generates test reports using [Mocha Reporter]. The reports are saved in the `reports/` directory.
 
