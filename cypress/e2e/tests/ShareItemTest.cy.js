@@ -23,12 +23,12 @@ describe('Part-3: Share Item with Email and Verification with the dowloadable li
     it('Verify email for download link', () => {
         cy.visit(Cypress.env('yopMail'));
         shareItemObj.visitToTheEmailProviderAndVerifyDownLoad(typeInfo.shareEmail);
-        cy.xpath('//span[text()="Click here to download the files"]')
+        shareItemObj.VerifyDownLoadLink()
         .should('exist') // Ensure the element exists
-        .and('have.text', 'Click here to download the files');
+        .and('have.text', typeInfo.dowloadTitleLink);
 
         cy.get('a')
         .should('have.attr', 'href')
-        .and('include', 'https://qatest.marcombox.com/FileShare?id=');
+        .and('include', typeInfo.hrefLink);
     });
 });

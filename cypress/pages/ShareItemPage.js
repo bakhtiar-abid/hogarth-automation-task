@@ -10,6 +10,7 @@ export class ShareItemPage{
        apiKeyField: '//input[@data-testid="api-key"]',
        loginButton: '#login',
        clickToLogin: '//button[@class="md"]',
+       downloadFileLink: '//span[text()="Click here to download the files"]'
        
     }
     shareItemWithEamil(emailID){
@@ -29,10 +30,13 @@ export class ShareItemPage{
    
 
 
-    visitToTheEmailProviderAndVerifyDownLoad(email){
+    visitToTheEmailProvider(email){
       cy.get(this.shareItemPageLocators.loginButton).type(email);
       cy.xpath(this.shareItemPageLocators.clickToLogin).click();
-      
+    }
+
+    VerifyDownLoadLink(){
+     return cy.xpath(this.shareItemPageLocators.downloadFileLink);
     }
 
     

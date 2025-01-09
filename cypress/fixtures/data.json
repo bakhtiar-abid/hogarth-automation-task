@@ -3,5 +3,7 @@
     "type": "Image",
     "imageName": "Photography.jpeg",
     "updateTitle": "QA Automation Engineer",
-    "shareEmail": "hogarth.test@yopmail.com"
+    "shareEmail": "hogarth.test@yopmail.com",
+    "dowloadTitleLink": "Click here to download the files",
+    "hrefLink": "https://qatest.marcombox.com/FileShare?id="
 }
