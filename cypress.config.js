@@ -16,5 +16,7 @@ module.exports = defineConfig({
     baseURL: "https://qatest.marcombox.com",
     userEmail: "sash.dqa@gmail.com",
     password: "Abid1234"
+    // userEmail: process.env.USEREMAIL,
+    // password: process.env.PASSWORD
   }
 });

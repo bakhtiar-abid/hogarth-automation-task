@@ -15,7 +15,7 @@ describe('Update Item @Part-2', () => {
 
     it('Verify that item is selected and edit for the information for title name value', () => {
         imageUploadObj.selectDamPopUp();
-        cy.wait(3000);
+        cy.wait(5000);
         updateItemPageObj.clickCheckBoxToSelectItem();
         cy.wait(3000);
         updateItemPageObj.editItemClickForUpdateInformation(typeInfo.updateTitle);
