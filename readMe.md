@@ -63,11 +63,11 @@ https://github.com/user-attachments/assets/8b82aa6b-e67b-4bf7-80e8-1deb8cb8ad01
 https://github.com/user-attachments/assets/ac5ad3bf-be97-467a-93fe-b8abfed44557
 
 
-- @Part 2 Validate that images can be uploaded with accurate and complete information, including title and type.
+- @Part 2 Verify that the Admin can update items and confirm that the updates are reflected correctly.
 https://github.com/user-attachments/assets/8a9c8324-a994-4fe1-a111-a6ab2c86e2d6
 
 
-- @Part 3 Verify that the Admin can update items and confirm that the updates are reflected correctly.
+- @Part 3 Validate that the Admin can share items via email and confirm that the recipient receives an email with a download link.
 https://github.com/user-attachments/assets/0899b876-093a-4aca-b014-7a324ea7e44c
 
 
