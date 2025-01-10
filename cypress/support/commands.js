@@ -26,6 +26,7 @@
 
 require('cypress-xpath');
 import 'cypress-file-upload';
+import 'cypress-iframe';
 
 
 Cypress.Commands.add('login',(email, password)=>{
@@ -35,3 +36,12 @@ Cypress.Commands.add('login',(email, password)=>{
     cy.xpath('//input[@type="password"]').type(password);
     cy.xpath('//button[@aria-label="Log in"]').click();
 })
+
+Cypress.Commands.add('getIframeBody', (iframeSelector) => {
+    return cy
+      .get(iframeSelector)
+      .its('0.contentDocument.body')
+      .should('not.be.empty')
+      .then(cy.wrap);
+  });
+  

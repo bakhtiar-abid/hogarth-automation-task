@@ -5,7 +5,6 @@
     "test:uploadItem": "npx cypress run --headed --spec cypress/e2e/tests/ImageUploadTest.cy.js",
     "test:updateItem": "npx cypress run --headed --spec cypress/e2e/tests/UpdateItemTest.cy.js",
     "test:shareItem": "npx cypress run --spec  cypress/e2e/tests/ShareItemTest.cy.js"
-    
   },
   "devDependencies": {
     "cypress": "^13.17.0",
@@ -15,6 +14,7 @@
   "dependencies": {
     "@faker-js/faker": "^9.3.0",
     "cypress-dotenv": "^3.0.1",
+    "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1",
     "dotenv": "^16.4.7"
